@@ -205,8 +205,8 @@ export default {
   padding: 15px;
 }
 .active-6-1 {
-  color: rgb(252, 55, 140) !important;
-  border-color: rgb(252, 55, 140) !important;
+  color: rgb(255, 255, 255) !important;
+  border-color: rgb(255, 255, 255) !important;
 }
 .active-6-2 {
   color: #04be02 !important;

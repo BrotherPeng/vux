@@ -24,7 +24,7 @@ export default {
   props: {
     lineWidth: {
       type: Number,
-      default: 3
+      default: 44
     },
     activeColor: String,
     barActiveColor: String,
@@ -102,11 +102,13 @@ export default {
 
   &-ink-bar {
     position: absolute;
-    height: 2px;
+    height: 44px;
     bottom: 0;
     left: 0;
     background-color: @tab-bar-active-color;
     text-align: center;
+    z-index: 98;
+    border-radius: 20px;
 
     &-transition-forward {
       transition: right @effect-duration @easing-in-out,
@@ -145,10 +147,13 @@ export default {
   text-align: center;
   line-height: 44px;
   color: @tab-text-default-color;
+
+  position: relative;
+  z-index: 99;
 }
 
 .vux-tab .vux-tab-item.vux-tab-selected {
-  color: @tab-text-active-color;
+  color: #ffffff;
   border-bottom: 3px solid @tab-text-active-color;
 }
 
