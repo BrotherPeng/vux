@@ -109,6 +109,7 @@ export default {
     text-align: center;
     z-index: 98;
     border-radius: 60px;
+    box-shadow: 0px 18px 14px -6px rgba(219,205,189,0.7);
 
     &-transition-forward {
       transition: right @effect-duration @easing-in-out,
