@@ -23,8 +23,8 @@ export default {
   },
   props: {
     lineWidth: {
-      type: Number,
-      default: 44
+      type: Number
+      // default: 44
     },
     activeColor: String,
     barActiveColor: String,
@@ -102,13 +102,13 @@ export default {
 
   &-ink-bar {
     position: absolute;
-    height: 44px;
+    height:80px;
     bottom: 0;
     left: 0;
     background-color: @tab-bar-active-color;
     text-align: center;
     z-index: 98;
-    border-radius: 20px;
+    border-radius: 60px;
 
     &-transition-forward {
       transition: right @effect-duration @easing-in-out,
@@ -124,9 +124,10 @@ export default {
 
 .vux-tab {
   display: flex;
-  background-color: #fff;
-  height: 44px;
+  background-color: #DEDEDE;
+  height:80px;
   position: relative;
+  border-radius: 60px;
 }
 .vux-tab button {
   padding: 0;
@@ -141,11 +142,11 @@ export default {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background: linear-gradient(180deg, #e5e5e5, #e5e5e5, rgba(229, 229, 229, 0)) bottom left no-repeat;
+  // background: linear-gradient(180deg, #e5e5e5, #e5e5e5, rgba(229, 229, 229, 0)) bottom left no-repeat;
   background-size: 100% 1px;
-  font-size: 14px;
+  font-size: 32px;
   text-align: center;
-  line-height: 44px;
+  line-height:80px;
   color: @tab-text-default-color;
 
   position: relative;
@@ -153,7 +154,7 @@ export default {
 }
 
 .vux-tab .vux-tab-item.vux-tab-selected {
-  color: #ffffff;
+  color: @tab-text-active-color;
   border-bottom: 3px solid @tab-text-active-color;
 }
 
