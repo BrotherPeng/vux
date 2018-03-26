@@ -93,6 +93,14 @@ npm install // or yarn
 npm run dev // or yarn dev
 ```
 
+## Get notified
+
+<p align="center">
+  <img src="https://ws1.sinaimg.cn/large/663d3650gy1fpno3msj6wj20dw0dw748.jpg" alt="" width="100">
+  <br>
+  <span>Scan with Wechat</span>
+</p>
+
 ## Maintainers
 
 + [airyland](https://github.com/airyland)
@@ -123,3 +131,5 @@ MIT
 ## Donate
 
 It takes time to maintain VUX. 
+
+
