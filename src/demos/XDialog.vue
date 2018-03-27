@@ -7,7 +7,7 @@
       <x-switch v-model="showToast" :title="$t('show toast')"></x-switch>
       <x-switch v-model="showHideOnBlur" :title="$t('hide on clicking mask')"></x-switch>
       <x-switch v-model="showDialogStyle" :title="$t('Toggle')" :inline-desc="$t('custom dialog style')"></x-switch>
-      <x-switch v-model="qShowPrimary" :title="$t('Primary Dialog')"></x-switch>
+      <x-switch v-model="qShowPrimary" :title="$t('Primary QDialog')"></x-switch>
       <x-switch v-model="qShowDanger" :title="$t('Danger QDialog')"></x-switch>
       <x-switch v-model="qShowSuccess" :title="$t('Success QDialog')"></x-switch>
       <x-switch v-model="qShowWarn" :title="$t('Warn QDialog')"></x-switch>
