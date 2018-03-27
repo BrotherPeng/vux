@@ -7,7 +7,13 @@
       <x-switch v-model="showToast" :title="$t('show toast')"></x-switch>
       <x-switch v-model="showHideOnBlur" :title="$t('hide on clicking mask')"></x-switch>
       <x-switch v-model="showDialogStyle" :title="$t('Toggle')" :inline-desc="$t('custom dialog style')"></x-switch>
+      <x-switch v-model="qShow" :title="$t('Toggle QDialog')"></x-switch>
     </group>
+
+    <div v-transfer-dom>
+      <q-dialog v-model="qShow">
+      </q-dialog>
+    </div>
 
     <div v-transfer-dom>
       <x-dialog v-model="showToast" class="dialog-demo">
@@ -84,6 +90,8 @@
 </template>
 
 <i18n>
+Toggle QDialog:
+  zh-CN: QDialog演示
 hide on clicking mask:
   zh-CN: 点击遮罩自动关闭
 Toggle:
@@ -101,13 +109,14 @@ show toast:
 </i18n>
 
 <script>
-import { XDialog, XButton, Group, XSwitch, TransferDomDirective as TransferDom } from 'vux'
+import { QDialog, XDialog, XButton, Group, XSwitch, TransferDomDirective as TransferDom } from 'vux'
 
 export default {
   directives: {
     TransferDom
   },
   components: {
+    QDialog,
     XDialog,
     XButton,
     Group,
@@ -122,6 +131,7 @@ export default {
   },
   data () {
     return {
+      qShow: false,
       show: false,
       show2: false,
       showToast: false,
