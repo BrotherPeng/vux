@@ -41,6 +41,42 @@
         <p style="font-size:14px;line-height:1.2;">Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit..</p>
       </div>
     </card>
+
+    <br/>
+    <br/>
+
+    <div class="coffee">
+      <card-round class="coffee-card" card-body-height="253px" card-footer-height="84px">
+        <!--<div slot="header">-->
+        <!--<img src="@/assets/img/logo.png" class="image">-->
+        <!--</div>-->
+        <img src="http://placeholder.qiniudn.com/640x300" class="image">
+        <div slot="bottom">
+          <img src="http://placeholder.qiniudn.com/640x300" class="image">
+        </div>
+      </card-round>
+      <card-round class="coffee-card">
+        <!--<div slot="header">-->
+        <!--<img src="http://placeholder.qiniudn.com/640x300" class="image">-->
+        <!--</div>-->
+        <img src="http://placeholder.qiniudn.com/640x300" class="image">
+        <div slot="bottom">
+          <img src="http://placeholder.qiniudn.com/640x300" class="image">
+        </div>
+      </card-round>
+      <card-round class="coffee-card">
+        <!--<div slot="header">-->
+        <!--<img src="http://placeholder.qiniudn.com/640x300" class="image">-->
+        <!--</div>-->
+        <img src="http://placeholder.qiniudn.com/640x300" class="image">
+        <div slot="bottom">
+          asdf
+        </div>
+      </card-round>
+      <div>
+        <router-link to="/myCoupons">Go to Foo</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -70,12 +106,13 @@ Use header slot and content slot:
 </i18n>
 
 <script>
-import { Divider, Card } from 'vux'
+import { Divider, Card, CardRound } from 'vux'
 
 export default {
   components: {
     Card,
-    Divider
+    Divider,
+    CardRound
   }
 }
 </script>
@@ -100,4 +137,26 @@ export default {
 .card-demo-flex span {
   color: #f74c31;
 }
+
+.coffee {
+  margin-left: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  font-size: 26px;
+
+  .coffee-card {
+    box-sizing:border-box;
+    width:320px;
+    height:340px;
+    background: #ffffff;
+    margin-right: 26px;
+    margin-bottom: 26px;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 </style>

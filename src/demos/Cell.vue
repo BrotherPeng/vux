@@ -86,6 +86,18 @@
       <cell :title="$t('Go to Demo')" :link="{path:'/demo'}" inline-desc=':link={path:"/demo"}'></cell>
       <cell :title="$t('Http link')" link="https://vux.li" inline-desc='link="https://vux.li"'></cell>
     </group>
+
+    <br/>
+    <br/>
+
+    <div>
+
+    </div>
+    <!--<q-cell>
+      <div slot="headerLeft" >订单编号：FOD12sdfsds34546465</div>
+      <div slot="headerRight" >已完成</div>
+      <img slot="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=">
+    </q-cell>-->
   </div>
 </template>
 
@@ -137,7 +149,7 @@ Messages:
 </i18n>
 
 <script>
-import { Cell, CellBox, CellFormPreview, Group, Badge } from 'vux'
+import { Cell, CellBox, CellFormPreview, Group, Badge, QCell } from 'vux'
 
 export default {
   mounted () {
@@ -150,7 +162,8 @@ export default {
     Cell,
     CellFormPreview,
     CellBox,
-    Badge
+    Badge,
+    QCell
   },
   methods: {
     onClick () {
