@@ -8,8 +8,13 @@
       <x-switch title="Popup address" v-model="show6"></x-switch>
       <x-switch title="default max-height=100%" v-model="show12"></x-switch>
       <x-switch title="set max-height=50%" v-model="show13"></x-switch>
+      <x-switch title="QPopup" v-model="show14"></x-switch>
     </group>
-    
+
+    <div v-transfer-dom>
+      <q-popup v-model="show14"></q-popup>
+    </div>
+
     <div v-transfer-dom>
       <popup v-model="show" @on-hide="log('hide')" @on-show="log('show')">
         <div class="popup0">
@@ -22,7 +27,7 @@
     </div>
 
     <toast v-model="showToast">You did it!</toast>
-    
+
     <div v-transfer-dom>
       <popup v-model="show1" height="100%">
         <div class="popup1">
@@ -32,7 +37,7 @@
         </div>
       </popup>
     </div>
-    
+
     <div v-transfer-dom>
       <popup v-model="show3">
         <div class="popup2">
@@ -44,7 +49,7 @@
         </div>
       </popup>
     </div>
-    
+
     <div v-transfer-dom>
       <popup v-model="show4">
         <div class="popup2">
@@ -55,7 +60,7 @@
         </div>
       </popup>
     </div>
-    
+
     <div v-transfer-dom>
       <popup v-model="show5" :hide-on-blur=false>
         <div class="popup2">
@@ -66,7 +71,7 @@
         </div>
       </popup>
     </div>
-    
+
     <div v-transfer-dom>
       <popup v-model="show6">
         <div class="popup1">
@@ -83,7 +88,7 @@
     <group>
       <x-switch title="transparent background" v-model="show7"></x-switch>
     </group>
-    
+
     <div v-transfer-dom>
       <popup v-model="show7" height="270px" is-transparent>
         <div style="width: 95%;background-color:#fff;height:250px;margin:0 auto;border-radius:5px;padding-top:10px;">
@@ -113,7 +118,7 @@
         </div>
       </popup>
     </div>
-    
+
     <div v-transfer-dom>
       <popup v-model="show9" position="right">
         <div style="width:200px;">
@@ -163,13 +168,14 @@
 </template>
 
 <script>
-import { TransferDom, Popup, Group, Cell, XButton, XSwitch, Toast, XAddress, ChinaAddressData } from 'vux'
+import { QPopup, TransferDom, Popup, Group, Cell, XButton, XSwitch, Toast, XAddress, ChinaAddressData } from 'vux'
 
 export default {
   directives: {
     TransferDom
   },
   components: {
+    QPopup,
     Popup,
     Group,
     Cell,
@@ -196,7 +202,8 @@ export default {
       show10: false,
       show11: false,
       show12: false,
-      show13: false
+      show13: false,
+      show14: false
     }
   },
   methods: {
