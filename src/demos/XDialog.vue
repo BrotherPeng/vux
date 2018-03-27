@@ -11,6 +11,9 @@
       <x-switch v-model="qShowDanger" :title="$t('Danger QDialog')"></x-switch>
       <x-switch v-model="qShowSuccess" :title="$t('Success QDialog')"></x-switch>
       <x-switch v-model="qShowWarn" :title="$t('Warn QDialog')"></x-switch>
+      <x-switch v-model="qShowPayFail" :title="$t('Pay Fail QDialog')"></x-switch>
+      <x-switch v-model="qShowPaySuccess" :title="$t('Pay Success QDialog')"></x-switch>
+      <x-switch v-model="qShowPayNSF" :title="$t('Pay NSF QDialog')"></x-switch>
     </group>
 
     <div v-transfer-dom>
@@ -22,6 +25,12 @@
       </q-dialog>
       <q-dialog v-model="qShowWarn" type="warn" btn-text="关闭">
       </q-dialog>
+      <q-dialog-pay v-model="qShowPaySuccess" type="success">
+      </q-dialog-pay>
+      <q-dialog-pay v-model="qShowPayFail" type="fail">
+      </q-dialog-pay>
+      <q-dialog-pay v-model="qShowPayNSF" type="nsf">
+      </q-dialog-pay>
     </div>
 
     <div v-transfer-dom>
@@ -99,6 +108,12 @@
 </template>
 
 <i18n>
+Pay Success QDialog:
+  zh-CN: 支付成功 QDialog演示
+Pay Fail QDialog:
+  zh-CN: 支付失败 QDialog演示
+Pay NSF QDialog:
+  zh-CN: 余额不足 QDialog演示
 Primary QDialog:
   zh-CN: Primary QDialog演示
 Success QDialog:
@@ -124,7 +139,7 @@ show toast:
 </i18n>
 
 <script>
-import { QDialog, XDialog, XButton, Group, XSwitch, TransferDomDirective as TransferDom } from 'vux'
+import { QDialogPay, QDialog, XDialog, XButton, Group, XSwitch, TransferDomDirective as TransferDom } from 'vux'
 
 export default {
   directives: {
@@ -132,6 +147,7 @@ export default {
   },
   components: {
     QDialog,
+    QDialogPay,
     XDialog,
     XButton,
     Group,
@@ -150,6 +166,9 @@ export default {
       qShowDanger: false,
       qShowSuccess: false,
       qShowWarn: false,
+      qShowPayFail: false,
+      qShowPaySuccess: false,
+      qShowPayNSF: false,
       show: false,
       show2: false,
       showToast: false,
