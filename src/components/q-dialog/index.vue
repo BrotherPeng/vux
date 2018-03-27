@@ -4,7 +4,7 @@
         <slot></slot>
       </div>
       <div @click="hide" class="vux-close"></div>
-      <x-button type="primary" class="vux-ok" @click.native="ok">知道了</x-button>
+      <x-button :type="type" class="vux-ok" @click.native="ok">{{btnText}}</x-button>
     </x-dialog>
 </template>
 
@@ -26,6 +26,14 @@ export default {
     initialShow: {
       type: Boolean,
       default: false
+    },
+    type: {
+      type: String,
+      default: 'primary'
+    },
+    btnText: {
+      type: String,
+      default: '知道了'
     }
   },
   computed: {

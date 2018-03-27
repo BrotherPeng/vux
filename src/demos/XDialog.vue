@@ -7,11 +7,20 @@
       <x-switch v-model="showToast" :title="$t('show toast')"></x-switch>
       <x-switch v-model="showHideOnBlur" :title="$t('hide on clicking mask')"></x-switch>
       <x-switch v-model="showDialogStyle" :title="$t('Toggle')" :inline-desc="$t('custom dialog style')"></x-switch>
-      <x-switch v-model="qShow" :title="$t('Toggle QDialog')"></x-switch>
+      <x-switch v-model="qShowPrimary" :title="$t('Primary Dialog')"></x-switch>
+      <x-switch v-model="qShowDanger" :title="$t('Danger QDialog')"></x-switch>
+      <x-switch v-model="qShowSuccess" :title="$t('Success QDialog')"></x-switch>
+      <x-switch v-model="qShowWarn" :title="$t('Warn QDialog')"></x-switch>
     </group>
 
     <div v-transfer-dom>
-      <q-dialog v-model="qShow">
+      <q-dialog v-model="qShowPrimary" type="primary">
+      </q-dialog>
+      <q-dialog v-model="qShowDanger" type="danger" btn-text="关闭">
+      </q-dialog>
+      <q-dialog v-model="qShowSuccess" type="success" btn-text="好的">
+      </q-dialog>
+      <q-dialog v-model="qShowWarn" type="warn" btn-text="关闭">
       </q-dialog>
     </div>
 
@@ -90,8 +99,14 @@
 </template>
 
 <i18n>
-Toggle QDialog:
-  zh-CN: QDialog演示
+Primary QDialog:
+  zh-CN: Primary QDialog演示
+Success QDialog:
+  zh-CN: Success QDialog演示
+Danger QDialog:
+  zh-CN: Danger QDialog演示
+Warn QDialog:
+  zh-CN: Warn QDialog演示
 hide on clicking mask:
   zh-CN: 点击遮罩自动关闭
 Toggle:
@@ -131,7 +146,10 @@ export default {
   },
   data () {
     return {
-      qShow: false,
+      qShowPrimary: false,
+      qShowDanger: false,
+      qShowSuccess: false,
+      qShowWarn: false,
       show: false,
       show2: false,
       showToast: false,
