@@ -149,7 +149,7 @@ Messages:
 </i18n>
 
 <script>
-import { Cell, CellBox, CellFormPreview, Group, Badge, QCell } from 'vux'
+import { Cell, CellBox, CellFormPreview, Group, Badge, QPanel } from 'vux'
 
 export default {
   mounted () {
@@ -163,7 +163,7 @@ export default {
     CellFormPreview,
     CellBox,
     Badge,
-    QCell
+    QPanel
   },
   methods: {
     onClick () {
