@@ -347,5 +347,9 @@
   {
     "name": "x-textarea",
     "icon": "&#xe611;"
+  },
+  {
+    "name": "q-coupon",
+    "icon": "&#xe658;"
   }
 ]

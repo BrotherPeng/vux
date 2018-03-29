@@ -11,6 +11,7 @@ import { sync } from 'vuex-router-sync'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
+Vue.use(require('vue-moment'))
 
 require('es6-promise').polyfill()
 
