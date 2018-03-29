@@ -143,6 +143,7 @@
   "XDialog": "src/components/x-dialog/index.vue",
   "QDialog": "src/components/q-dialog/index.vue",
   "QDialogPay": "src/components/q-dialog-pay/index.vue",
+  "QStep": "src/components/q-step/index.vue",
   "XHeader": "src/components/x-header/index.vue",
   "XHr": "src/components/x-hr/index.vue",
   "XImg": "src/components/x-img/index.vue",
