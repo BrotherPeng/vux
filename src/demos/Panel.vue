@@ -76,6 +76,7 @@ export default {
       orderList: [{
         headerLeft: '<span style="color: #666666;">订单编号：FOD12sdfsds34546465</span>',
         headerRight: '已完成',
+        imgSize: 'img-middel',
         desc: '共两件商品  总计：￥66.50',
         footerButtons: [{
           style: 'cancel',
@@ -107,6 +108,7 @@ export default {
       }, {
         headerLeft: '<span style="color: #666666;">订单编号：FOD12sdfsds34546465</span>',
         headerRight: '已完成',
+        imgSize: 'img-middel',
         desc: '共两件商品  总计：￥66.50',
         footerButtons: [{
           style: 'ok',
@@ -135,6 +137,7 @@ export default {
       }, {
         headerLeft: '<span style="color: #666666;">订单编号：FOD12sdfsds34546465</span>',
         headerRight: '处理中',
+        imgSize: 'img-small',
         goodsList: [{
           src: 'http://somedomain.somdomain/x.jpg',
           fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
@@ -149,7 +152,8 @@ export default {
       }, {
 //        headerLeft: '<span style="color: #666666;">订单编号：FOD12sdfsds34546465</span>',
 //        headerRight: '处理中',
-        isGoods: true,
+        isGoods: 'goods',
+        imgSize: 'img-big',
         goodsList: [{
           src: 'http://somedomain.somdomain/x.jpg',
           fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
@@ -164,7 +168,8 @@ export default {
       }, {
 //        headerLeft: '<span style="color: #666666;">订单编号：FOD12sdfsds34546465</span>',
 //        headerRight: '处理中',
-        isGoods: true,
+        isGoods: 'goods',
+        imgSize: 'img-big',
         goodsList: [{
           src: 'http://somedomain.somdomain/x.jpg',
           fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
@@ -179,7 +184,8 @@ export default {
       }, {
 //        headerLeft: '<span style="color: #666666;">订单编号：FOD12sdfsds34546465</span>',
 //        headerRight: '处理中',
-        isGoods: true,
+        isGoods: 'goods',
+        imgSize: 'img-big',
         goodsList: [{
           src: 'http://somedomain.somdomain/x.jpg',
           fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',

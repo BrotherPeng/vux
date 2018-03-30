@@ -13,8 +13,8 @@ export default {
     backgroundColor: String,
     type: String,
     width: {
-      type: Number,
-      default: 80
+      type: Number
+//      default: 80
     }
   },
   methods: {

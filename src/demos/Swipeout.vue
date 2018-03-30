@@ -66,30 +66,67 @@
     <br>
     <br>
     <q-swipeout>
-      <q-swipeout-item transition-mode="reveal" v-for="i in 3" :key="i" :right-menu-width="190">
+      <q-swipeout-item transition-mode="reveal" v-for="i in 3" :key="i">
         <div slot="right-menu">
           <!--<q-swipeout-button type="primary">{{$t('Yes')}}</q-swipeout-button>-->
-          <q-swipeout-button type="warn" :width="80">{{$t('Right')}}</q-swipeout-button>
+          <q-swipeout-button type="warn"><icon type="success" class="icon-delete"></icon></q-swipeout-button>
         </div>
         <div slot="content">
-          <div class="q-cell">
-            <div class="q-cell-img">
+          <div class="q-sw-cell">
+            <div class="q-sw-cell-img">
+              <icon type="success" class="checkmark"></icon>
               <img src="item.src"/>
             </div>
-            <div class="q-cell-body">
-              <div class="q-cell-body-top">
-                <div class="q-cell-body-title">
-                  <div class="item">asdf</div>
-                  <div class="item">sadfsfd</div>
+            <div class="q-sw-cell-body">
+              <div class="q-sw-cell-body-top">
+                <div class="q-sw-cell-body-title">
+                  <div class="item">镀铜不锈钢马克杯</div>
                 </div>
-                <div class="q-cell-body-desc">
-                  <div>asdfsdf</div>
+                <div class="q-sw-cell-body-desc">
+                  <div>金色</div>
                 </div>
               </div>
 
-              <div class="q-cell-body-bottom">
-                <div>asfsadf</div>
-                <div>去制作</div>
+              <div class="q-sw-cell-body-bottom">
+                <div>¥10.50</div>
+                <!--<div>去制作</div>-->
+                <!--<slot name="mid"></slot>-->
+              </div>
+            </div>
+            <div class="q-sw-cell-right">
+              <div><icon type="success" class="checkmark"></icon></div>
+              <div>1</div>
+              <div><icon type="success" class="checkmark"></icon></div>
+            </div>
+          </div>
+        </div>
+      </q-swipeout-item>
+    </q-swipeout>
+    <br/>
+    <br/>
+    <q-swipeout>
+      <q-swipeout-item :disabled="true" transition-mode="reveal" v-for="i in 3" :key="i">
+
+        <div slot="content">
+          <div class="q-sw-cell q-sw-cell-padding">
+            <div class="q-sw-cell-left">
+              <span class="q-sw-cell-dot"></span>
+              <!--<img src="item.src"/>-->
+            </div>
+            <div class="q-sw-cell-body">
+              <div class="q-sw-cell-body-top">
+                <div class="q-sw-cell-body-title">
+                  <div class="item">买券60张[赠送9张]</div>
+                  <div class="item">¥480.00</div>
+                </div>
+                <!--<div class="q-sw-cell-body-desc">-->
+                  <!--<div>asdfsdf</div>-->
+                <!--</div>-->
+              </div>
+
+              <div class="q-sw-cell-body-bottom">
+                <div class="q-sw-cell-body-bottom-gray">2018.1.5 18:03</div>
+                <!--<div>去制作</div>-->
                 <!--<slot name="mid"></slot>-->
               </div>
             </div>
@@ -132,7 +169,7 @@ Ignore:
 </i18n>
 
 <script>
-import { GroupTitle, Swipeout, SwipeoutItem, SwipeoutButton, QSwipeout, QSwipeoutItem, QSwipeoutButton, XButton } from 'vux'
+import { GroupTitle, Swipeout, SwipeoutItem, SwipeoutButton, QSwipeout, QSwipeoutItem, QSwipeoutButton, XButton, Icon } from 'vux'
 
 export default {
   components: {
@@ -143,7 +180,8 @@ export default {
     QSwipeout,
     QSwipeoutItem,
     QSwipeoutButton,
-    XButton
+    XButton,
+    Icon
   },
   methods: {
     onButtonClick (type) {
@@ -165,34 +203,94 @@ export default {
 .demo-content {
   padding: 10px 10px;
 }
+.icon-delete {
+  font-size: 33px;
+  color: #FFFFFF;
+}
 
-.q-cell{
+.q-sw-cell-padding {
+  padding: 40px 28px 40px 28px !important;
+}
+
+.q-sw-cell{
   display: flex;
   /*width: 642px;*/
   background-color: #ffffff;
-  padding: 30px 26px;
+  padding: 30px 26px 30px 26px;
+  /*min-height: 76px;*/
+  border-radius: 6px ;
   /*padding-bottom: 30px;*/
-  .q-cell-img{
-    width:180px;
-    height:180px;
-    margin-right: 20px;
+  .q-sw-cell-img{
+    /*width:229px;*/
+    /*height:229px;*/
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    .checkmark{
+      font-size: 38px;
+    }
   }
+
+
+  .q-sw-cell-left{
+    /*width:229px;*/
+    /*height:229px;*/
+    margin-top: 14px;
+    margin-right: 28px;
+    display: flex;
+    align-items: flex-start;
+
+    .q-sw-cell-dot{
+      width:12px;
+      height:12px;
+      background:rgba(141,122,101,1);
+      border-radius: 6px;
+    }
+  }
+
   img{
+    margin-left: 21px;
     width:180px;
     height:180px;
   }
 
-  .q-cell-body {
+  .q-sw-cell-right {
+    display: flex;
+    /*align-content: space-between;*/
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      text-align: center;
+      .checkmark{
+        font-size: 48px;
+      }
+    }
+
+    :nth-child(2){
+      /*height:43px;*/
+      font-size:36px;
+      font-family:SFNSDisplay-Medium;
+      color:rgba(74,74,74,1);
+      /*line-height:43px;*/
+    }
+    /*:nth-child(1) icon{
+      font-size: 48px;
+    }*/
+  }
+
+  .q-sw-cell-body {
     flex: 2;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    .q-cell-body-top{
-      .q-cell-body-title {
+
+    .q-sw-cell-body-top{
+      .q-sw-cell-body-title {
         display: flex;
         justify-content: space-between;
-        font-weight: 600;
+        /*font-weight: 600;*/
         font-size:32px;
         color:rgba(74,74,74,1);
         line-height:32px;
@@ -205,16 +303,19 @@ export default {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
-          line-height: 40px;
+          line-height: 44px;
         }
+
         :nth-child(2){
+          /*height:28px;*/
           font-size:28px;
           font-family:PingFangSC-Medium;
           color:rgba(141,122,101,1);
-          line-height:28px;
+          /*line-height:28px;*/
         }
       }
-      .q-cell-body-desc{
+
+      .q-sw-cell-body-desc{
         font-size:24px;
         color:rgba(155,155,155,1);
         height:40px;
@@ -223,15 +324,17 @@ export default {
     }
 
 
-    .q-cell-body-bottom{
+    .q-sw-cell-body-bottom{
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      /*width: 100%;*/
       align-items: flex-end;
-      font-size:22px;
-      font-family:PingFangSC-Regular;
-      color:rgba(155,155,155,1);
-      line-height:20px;
+
+      height:33px;
+      font-size:28px;
+      font-family:SFNSDisplay-Medium;
+      color:rgba(141,122,101,1);
+      line-height:33px;
 
       .button{
         display: inline;
@@ -249,12 +352,20 @@ export default {
       /*:nth-child(1){*/
       /*text-align: ;*/
       /*}*/
-      .q-cell-body-bottom-left {
+      .q-sw-cell-body-bottom-left {
         font-size:28px;
         font-family:PingFangSC-Medium;
         color:rgba(141,122,101,1);
         line-height:28px;
         height: 28px;
+      }
+
+      .q-sw-cell-body-bottom-gray {
+        font-size:22px;
+        font-family:PingFangSC-Medium;
+        color:#9B9B9B;
+        line-height:22px;
+        height: 22px;
       }
 
       .panel-order-goods-num {

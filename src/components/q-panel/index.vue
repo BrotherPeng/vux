@@ -7,7 +7,7 @@
         <div v-html="order.headerLeft"></div>
         <div v-html="order.headerRight"></div>
       </div>
-      <div class="q-cell" v-for="item in order.goodsList" v-bind:class="{ goods: order.isGoods }">
+      <div class="q-cell" v-for="item in order.goodsList" v-bind:class="[order.isGoods, order.imgSize]">
         <div class="q-cell-img">
           <img :src="item.src" @error="onImgError(item, $event)"/>
         </div>
@@ -145,7 +145,7 @@
       display: flex;
       justify-content: space-between;
       font-size:28px;
-      font-weight: 600;
+      /*font-weight: 600;*/
       color:rgba(74,74,74,1);
       line-height:32px;
       margin-bottom: 28px;
@@ -197,19 +197,19 @@
     padding-top: 28px;
     padding-bottom: 28px;
     .q-cell-img{
-      width:140px;
-      height:140px;
+      width:180px;
+      height:180px;
       margin-right: 20px;
     }
     img{
-      width:140px;
-      height:140px;
+      width:180px;
+      height:180px;
     }
   }
   .goods {
     border-top: 0px !important;
     padding-top: 0px !important;
-    .q-cell-img{
+    /*.q-cell-img{
       width:258px;
       height:258px;
       margin-right: 20px;
@@ -217,7 +217,7 @@
     img{
       width:258px;
       height:258px;
-    }
+    }*/
 
     .q-cell-body-title {
       margin-top: 21px;
@@ -235,6 +235,39 @@
 
     }
   }
+  .img-big {
+    .q-cell-img{
+      width:258px;
+      height:258px;
+      margin-right: 20px;
+    }
+    img{
+      width:258px;
+      height:258px;
+    }
+  }
+  .img-middle {
+    .q-cell-img{
+      width:180px;
+      height:180px;
+      margin-right: 20px;
+    }
+    img{
+      width:180px;
+      height:180px;
+    }
+  }
+  .img-small {
+    .q-cell-img{
+      width:140px;
+      height:140px;
+      margin-right: 20px;
+    }
+    img{
+      width:140px;
+      height:140px;
+    }
+  }
   .q-cell-body {
     flex: 2;
     display: flex;
@@ -245,7 +278,7 @@
       .q-cell-body-title {
         display: flex;
         justify-content: space-between;
-        font-weight: 600;
+        /*font-weight: 600;*/
         font-size:32px;
         color:rgba(74,74,74,1);
         line-height:32px;

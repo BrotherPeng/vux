@@ -44,6 +44,7 @@
       <x-icon type="ios-star-outline" size="30"></x-icon>
       <x-icon type="ios-heart" size="30"></x-icon>
       <x-icon type="ios-heart-outline" size="30"></x-icon>
+      <i class="iconfont qimiao-gengduo"></i>
     </div>
   </div>
 </template>

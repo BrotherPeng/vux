@@ -157,7 +157,7 @@ export default {
           const threshold = this.threshold <= 1 ? this.rightMenuWidth * this.threshold : this.threshold
 
           if (this.distX < -threshold) {
-            this.setOffset(-this.rightMenuWidth, true)
+            this.setOffset(-(this.rightMenuWidth + 10), true)
             this.$emit('on-open')
             this.isOpen = true
           } else {
@@ -213,6 +213,8 @@ export default {
         this.target.addEventListener('webkitTransitionEnd', cb)
         this.target.addEventListener('transitionend', cb)
       }
+      console.log('translate3d(' + x + 'px, 0, 0)')
+      console.log(x)
       this.styles.transform = 'translate3d(' + x + 'px, 0, 0)'
     },
     _setClose (delay = 0) {
@@ -237,10 +239,14 @@ export default {
   computed: {
     menuWidth () {
       if (!this.hasLeftMenu && this.hasRightMenu) {
-        return this.rightMenuWidth
+        console.log(this.rightMenuWidth + 25)
+        console.log('this.rightMenuWidth - 25')
+        return this.rightMenuWidth + 25
       }
       if (this.hasLeftMenu && !this.hasRightMenu) {
-        return this.leftMenuWidth
+        console.log(this.leftMenuWidth + 25)
+        console.log('this.rightMenuWidth - 25')
+        return this.leftMenuWidth + 25
       }
       if (this.hasLeftMenu && this.hasRightMenu) {
         return this.distX < 0 ? this.rightMenuWidth : this.leftMenuWidth
@@ -261,6 +267,7 @@ export default {
     },
     rightButtonBoxStyle () {
       let styles = JSON.parse(JSON.stringify(this.buttonBoxStyle))
+      console.log(this.transitionMode)
       if (this.transitionMode === 'follow') {
         let offset = this.styles.transform.indexOf('(0px, 0, 0)') === -1 ? this.rightMenuWidth - Math.abs(this.distX) : this.rightMenuWidth
         if (offset < 0) {
@@ -271,6 +278,7 @@ export default {
         }
         styles.transform = `translate3d(${offset}px, 0, 0)`
       }
+      console.log(styles)
       return styles
     }
   },
