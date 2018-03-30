@@ -10,9 +10,11 @@
     </box>
     <divider>default</divider>
     <box gap="10px 10px">
-      <x-button>submit</x-button>
-      <x-button type="primary">primary</x-button>
-      <x-button type="warn">Delete</x-button>
+      <x-button>Default</x-button>
+      <x-button type="primary">Primary</x-button>
+      <x-button type="warn">Warn</x-button>
+      <x-button type="danger">Danger</x-button>
+      <x-button type="success">Success</x-button>
 
       <divider>link</divider>
       <x-button type="primary" link="/demo">Go to demo list</x-button>
@@ -31,6 +33,8 @@
       <x-button mini>submit</x-button>
       <x-button mini type="primary">primary</x-button>
       <x-button mini type="warn">Delete</x-button>
+      <x-button mini type="success">success</x-button>
+      <x-button mini type="danger">Delete</x-button>
       <br>
       <x-button mini plain>submit</x-button>
       <x-button mini plain type="primary">primary</x-button>

@@ -7,7 +7,31 @@
       <x-switch v-model="showToast" :title="$t('show toast')"></x-switch>
       <x-switch v-model="showHideOnBlur" :title="$t('hide on clicking mask')"></x-switch>
       <x-switch v-model="showDialogStyle" :title="$t('Toggle')" :inline-desc="$t('custom dialog style')"></x-switch>
+      <x-switch v-model="qShowPrimary" :title="$t('Primary QDialog')"></x-switch>
+      <x-switch v-model="qShowDanger" :title="$t('Danger QDialog')"></x-switch>
+      <x-switch v-model="qShowSuccess" :title="$t('Success QDialog')"></x-switch>
+      <x-switch v-model="qShowWarn" :title="$t('Warn QDialog')"></x-switch>
+      <x-switch v-model="qShowPayFail" :title="$t('Pay Fail QDialog')"></x-switch>
+      <x-switch v-model="qShowPaySuccess" :title="$t('Pay Success QDialog')"></x-switch>
+      <x-switch v-model="qShowPayNSF" :title="$t('Pay NSF QDialog')"></x-switch>
     </group>
+
+    <div v-transfer-dom>
+      <q-dialog v-model="qShowPrimary" type="primary">
+      </q-dialog>
+      <q-dialog v-model="qShowDanger" type="danger" btn-text="关闭">
+      </q-dialog>
+      <q-dialog v-model="qShowSuccess" type="success" btn-text="好的">
+      </q-dialog>
+      <q-dialog v-model="qShowWarn" type="warn" btn-text="关闭">
+      </q-dialog>
+      <q-dialog-pay v-model="qShowPaySuccess" type="success">
+      </q-dialog-pay>
+      <q-dialog-pay v-model="qShowPayFail" type="fail">
+      </q-dialog-pay>
+      <q-dialog-pay v-model="qShowPayNSF" type="nsf">
+      </q-dialog-pay>
+    </div>
 
     <div v-transfer-dom>
       <x-dialog v-model="showToast" class="dialog-demo">
@@ -84,6 +108,20 @@
 </template>
 
 <i18n>
+Pay Success QDialog:
+  zh-CN: 支付成功 QDialog演示
+Pay Fail QDialog:
+  zh-CN: 支付失败 QDialog演示
+Pay NSF QDialog:
+  zh-CN: 余额不足 QDialog演示
+Primary QDialog:
+  zh-CN: Primary QDialog演示
+Success QDialog:
+  zh-CN: Success QDialog演示
+Danger QDialog:
+  zh-CN: Danger QDialog演示
+Warn QDialog:
+  zh-CN: Warn QDialog演示
 hide on clicking mask:
   zh-CN: 点击遮罩自动关闭
 Toggle:
@@ -101,13 +139,15 @@ show toast:
 </i18n>
 
 <script>
-import { XDialog, XButton, Group, XSwitch, TransferDomDirective as TransferDom } from 'vux'
+import { QDialogPay, QDialog, XDialog, XButton, Group, XSwitch, TransferDomDirective as TransferDom } from 'vux'
 
 export default {
   directives: {
     TransferDom
   },
   components: {
+    QDialog,
+    QDialogPay,
     XDialog,
     XButton,
     Group,
@@ -122,6 +162,13 @@ export default {
   },
   data () {
     return {
+      qShowPrimary: false,
+      qShowDanger: false,
+      qShowSuccess: false,
+      qShowWarn: false,
+      qShowPayFail: false,
+      qShowPaySuccess: false,
+      qShowPayNSF: false,
       show: false,
       show2: false,
       showToast: false,

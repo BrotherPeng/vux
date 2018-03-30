@@ -1,6 +1,10 @@
 @import "../../base/fn";
 
-.weui-btn_default {
+button{
+  &.weui-btn_default {
+    border-width: 1px !important;
+    border-color: @weuiBtnDefaultFontColor;
+    border-style: solid;
     color: @weuiBtnDefaultFontColor;
     background-color: @weuiBtnDefaultBg;
     &:not(.weui-btn_disabled):visited {
@@ -10,4 +14,5 @@
         color: @weuiBtnDefaultActiveFontColor;
         background-color: @weuiBtnDefaultActiveBg;
     }
+  }
 }

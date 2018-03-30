@@ -1,6 +1,7 @@
 <template>
   <div style="width: 95%;margin: 0 auto;">
     <br>
+    <!--
     <div>
       <step v-model="step1" background-color='#fbf9fe'>
         <step-item :title="$t('step 1')" description="step 1"></step-item>
@@ -9,12 +10,16 @@
       </step>
     </div>
     <x-hr></x-hr>
+     -->
     <div>
+      <!--
       <step v-model="step2" background-color='#fbf9fe' gutter="20px">
         <step-item :title="$t('done')"></step-item>
         <step-item :title="$t('processing')"></step-item>
         <step-item :title="$t('end')"></step-item>
       </step>
+      -->
+      <q-step v-model="step2"></q-step>
       <div class="btn_wrap">
         <x-button type="primary" @click.native="nextStep">{{ $t('next step') }}</x-button>
       </div>
@@ -40,10 +45,11 @@ step 3:
 </i18n>
 
 <script>
-import { Step, StepItem, XButton, XHr } from 'vux'
+import { QStep, Step, StepItem, XButton, XHr } from 'vux'
 
 export default {
   components: {
+    QStep,
     Step,
     StepItem,
     XButton,

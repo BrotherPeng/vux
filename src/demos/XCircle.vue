@@ -2,6 +2,10 @@
   <div class="vux-circle-demo">
     <br>
     <div style='width:150px;height:150px;'>
+      <q-circle :percent="percent1"></q-circle>
+    </div>
+    <br>
+    <div style='width:150px;height:150px;'>
       <x-circle :percent="percent1" :stroke-width="10" stroke-color="#04BE02">
         <span>{{percent1}}</span>
       </x-circle>
@@ -38,13 +42,14 @@
 </template>
 
 <script>
-import { XCircle, Range, Icon } from 'vux'
+import { QCircle, XCircle, Range, Icon } from 'vux'
 
 export default {
   ready () {
     setInterval(this.update2, 2000)
   },
   components: {
+    QCircle,
     XCircle,
     Range,
     Icon
