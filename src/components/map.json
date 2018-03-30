@@ -69,6 +69,7 @@
   "Group": "src/components/group/index.vue",
   "GroupTitle": "src/components/group-title/index.vue",
   "Icon": "src/components/icon/index.vue",
+  "QIcon": "src/components/q-icon/index.vue",
   "InlineCalendar": "src/components/inline-calendar/index.vue",
   "InlineDesc": "src/components/inline-desc/index.vue",
   "InlineLoading": "src/components/inline-loading/index.vue",

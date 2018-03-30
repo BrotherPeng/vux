@@ -44,16 +44,25 @@
       <x-icon type="ios-star-outline" size="30"></x-icon>
       <x-icon type="ios-heart" size="30"></x-icon>
       <x-icon type="ios-heart-outline" size="30"></x-icon>
-      <i class="iconfont qimiao-gengduo"></i>
+
     </div>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#qimiao-jianshao"></use>
+    </svg>sadfasd
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#qimiao-wode-weixuanzhong"></use>
+    </svg>
+    <q-icon icon-name="wode-weixuanzhong"></q-icon>
+    <q-icon icon-name="quan"></q-icon>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
+import { Group, Cell, QIcon } from 'vux'
 
 export default {
   components: {
+    QIcon,
     Group,
     Cell
   },
@@ -72,5 +81,12 @@ export default {
 .cell-x-icon {
   display: block;
   fill: green;
+}
+
+.icon {
+  width: 60px; height: 60px;
+  vertical-align: -1.5px;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>
